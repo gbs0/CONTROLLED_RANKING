@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, :last_name, :email, presence: true
   has_many :schedules
+
+  def full_name
+    "#{name} #{last_name}"
+  end
 end
